@@ -940,6 +940,7 @@ class _HomeState extends State<Home> {
           print('the transfer rate $transferRate');
           setState(() {
             downloadRate = transferRate;
+            downloadRate = double.parse(downloadRate.toStringAsFixed(2));
             unitText = unit == SpeedUnit.Kbps ? '\n kbps' : '\n mbps';
             downloadProgress = '100';
             lastDownloadValue = downloadSpeedList.last;
@@ -952,6 +953,7 @@ class _HomeState extends State<Home> {
           print('the transfer rate $transferRate, the percent $percent');
           setState(() {
             downloadRate = transferRate;
+            downloadRate = double.parse(downloadRate.toStringAsFixed(2));
             unitText = unit == SpeedUnit.Kbps ? '\n kbps' : '\n mbps';
             downloadProgress = percent.toStringAsFixed(2);
           });
@@ -982,6 +984,7 @@ class _HomeState extends State<Home> {
           print('I am done getting speed');
           setState(() {
             uploadRate = transferRate;
+            uploadRate = double.parse(uploadRate.toStringAsFixed(2));
             unitText = unit == SpeedUnit.Kbps ? '\n kbps' : '\n mbps';
             uploadProgress = '100';
             lastUploadValue = uploadSpeedList.last;
@@ -999,6 +1002,7 @@ class _HomeState extends State<Home> {
         onProgress: (double percent, double transferRate, SpeedUnit unit) {
           setState(() {
             uploadRate = transferRate;
+            uploadRate = double.parse(uploadRate.toStringAsFixed(2));
             unitText = unit == SpeedUnit.Kbps ? '\n kbps' : '\n mbps';
             uploadProgress = percent.toStringAsFixed(2);
           });
